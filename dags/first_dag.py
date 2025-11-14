@@ -15,7 +15,7 @@ with DAG(
     
     task_4 = BashOperator(
         task_id= "create_folder",
-        bash_command= 'mkdir -p "/home/laryssa/Documents/repositories/apache-airflow/test_{{data_interval_end}}"',
+        bash_command= 'mkdir -p "/home/laryssa/Documents/repositories/apache-airflow/alura-apache-airflow/test_{{data_interval_end}}"',
     )
 
     task_1 >> [task_2, task_3]
