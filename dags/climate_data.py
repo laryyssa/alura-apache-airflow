@@ -32,7 +32,7 @@ with DAG(
     
     # breakpoint()
 
-    working_path = f"{file_path}/week={start_date.strftime('%Y-%m-%d')}"
+    working_path = f"{file_path}/week={start_date.strftime('%Y-%m-%d')}/"
 
     task_1 = BashOperator(
         task_id="create_folder",
@@ -44,7 +44,7 @@ with DAG(
         python_callable= extract_data,
         op_kwargs = {
             'working_path': working_path,
-            'data_interval_end': '{{data_interval_end.strftime("%Y-%m-%d)}}'
+            'data_interval_end': '{{ data_interval_end.strftime("%Y-%m-%d") }}'
         }
     )
 
